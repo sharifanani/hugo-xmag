@@ -10,7 +10,7 @@
     {{ partial "head_custom.html" . }}
   </head>
 
-  <body{{if .IsPage}} class="page"{{ end }}>
+  <body {{if .IsPage}} class="page"{{ end }}>
     <nav class="header">
       {{ partial "banner.html" . }}
       <div class="head-meta">
@@ -31,7 +31,7 @@
         {{ end }}
       {{ else }}
         <span>{{ $.Scratch.Get "Title" }}</span>
-        <span>{{ now.Format "2006-01-02" }}</span>
+        <!-- <span>{{ now.Format "2006-01-02" }}</span> -->
         {{ $pages := .Pages }}
         {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
         {{ $paginator := .Paginate (where $pages "Section" "!=" "") }}
